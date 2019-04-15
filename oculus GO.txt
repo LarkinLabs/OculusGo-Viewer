@@ -1,0 +1,13 @@
+oculus go saving files.
+
+you can create and write to files no problem on a occulus go.
+These files will not be visible via usb as the usb uses the MTP protocol.
+This protocol uses a list of files to make visible over usb.
+These files are visible via a ADB file veiwing software.
+to make a file visible via usb you need to update that list with that file uising the native andrtoid media scannerconnection.
+This can be done for the whole device, but depending on the file count this is not advised.
+
+
+Occulus GO and maybe other android devices do not run code in the on (destroy, OnApllicationQuit) functions this took a awhile to over come.
+The work around was to add the update file list code to the OnPause function. this is ran when the oculus key is pressed on the remote.
+after the code is ran the program cannot writed to that file so the porgram needed to be closed.
